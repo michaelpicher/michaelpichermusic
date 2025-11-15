@@ -1,427 +1,159 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+<html style="font-size: 16px;" lang="en"><head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Michael Picher - Composer</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Open Sans', sans-serif;
-            background-color: #111;
-            color: #eee;
-            line-height: 1.6;
-        }
-
-        /* Sticky Header */
-        header {
-            position: sticky;
-            top: 0;
-            background-color: #000;
-            padding: 1rem 2rem;
-            z-index: 100;
-            border-bottom: 1px solid #333;
-        }
-
-        nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            color: #0f0;
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .nav-links a:hover {
-            color: #0f0;
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 4rem 2rem;
-            text-align: center;
-        }
-
-            .hero-video {
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto 3rem;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-        }
-
-        .hero-video iframe {
-            width: 100%;
-            height: auto;
-            aspect-ratio: 16 / 9;
-            border: none;
-        }
-
-        .bio {
-            max-width: 800px;
-            margin: 0 auto 4rem;
-            padding: 2rem;
-            background-color: #222;
-            border-radius: 8px;
-            text-align: left;
-        }
-
-        .bio p {
-            margin-bottom: 1.2rem;
-            font-size: 1rem;
-        }
-
-        /* Underscores Section */
-        .underscores {
-            max-width: 870px;
-            margin: 0 auto 4rem;
-            padding: 0 2rem;
-        }
-
-        .underscores .title {
-            text-align: center;
-            font-size: 25px;
-            font-weight: bold;
-            text-decoration: underline;
-            margin-bottom: 30px;
-            color: #eee;
-        }
-
-        .underscores .content-wrapper {
-            display: flex;
-            align-items: flex-start;
-            gap: 30px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .underscores .video-column {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .underscores .youtube-embed {
-            width: 100%;
-            max-width: 474px;
-            height: auto;
-            aspect-ratio: 16 / 9;
-            border: none;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-        }
-
-        .underscores .soundcloud-wrapper {
-            flex: 1;
-            min-width: 300px;
-            max-width: 476px;
-        }
-
-        .underscores .soundcloud-wrapper iframe {
-            width: 100% !important;
-            height: 464px !important;
-            border: none;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-        }
-
-        .underscores .soundcloud-wrapper > div {
-            font-size: 10px;
-            color: #cccccc;
-            line-break: anywhere;
-            word-break: normal;
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            font-family: Interstate, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Garuda, Verdana, Tahoma, sans-serif;
-            font-weight: 100;
-            margin-top: 4px;
-            text-align: center;
-        }
-
-        .underscores .soundcloud-wrapper a {
-            color: #cccccc;
-            text-decoration: none;
-        }
-
-        /* New Combined Section: Orchestral & Electronic */
-        .playlists-section {
-            max-width: 870px;
-            margin: 0 auto 4rem;
-            padding: 0 2rem;
-        }
-
-        .playlists-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .playlist-item {
-            flex: 1;
-           min-width: 300px;
-            max-width: 476px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-/* ---- 30 px gap only after the first playlist ---- */
-        .playlist-item:first-child {
-    margin-bottom: 30px;               /* mobile / stacked */
-        }
-        @media (min-width: 901px) {
-        .playlist-item:first-child {
-            margin-bottom: 0;
-            margin-right: 30px;            /* desktop side-by-side */
-        }
-}
-
-
-        .playlist-title {
-            text-align: center;
-            font-size: 25px;
-            font-weight: bold;
-            text-decoration: underline;
-            margin-bottom: 20px;
-            color: #eee;
-            width: 100%;
-        }
-
-        .playlist-wrapper {
-            width: 100%;
-        }
-
-        .playlist-wrapper iframe {
-            width: 100% !important;
-            height: 464px !important;
-            border: none;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-        }
-
-        .playlist-wrapper > div {
-            font-size: 10px;
-            color: #cccccc;
-            line-break: anywhere;
-            word-break: normal;
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            font-family: Interstate, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Garuda, Verdana, Tahoma, sans-serif;
-            font-weight: 100;
-            margin-top: 4px;
-            text-align: center;
-        }
-
-        .playlist-wrapper a {
-            color: #cccccc;
-            text-decoration: none;
-        }
-
-        /* Footer */
-        footer {
-            margin-top: 4rem;
-            padding: 2rem;
-            background-color: #000;
-            font-size: 0.8rem;
-            color: #666;
-        }
-
-        .footer-links a {
-            color: #0f0;
-            text-decoration: none;
-        }
-
-        .pagination {
-            display: flex;
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
-
-        .dot {
-            width: 30px;
-            height: 30px;
-            background-color: #444;
-            border-radius: 50%;
-        }
-
-        .dot.active {
-            background-color: #fff;
-        }
-
-        /* Footer Layout */
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .footer-left {
-            display: flex;
-            flex-direction: column;
-        }
-
-        /* Responsive Adjustments */
-        @media (max-width: 900px) {
-            .underscores .content-wrapper {
-                flex-direction: column;
-                align-items: center;
-            }
-            .underscores .video-column,
-            .underscores .soundcloud-wrapper {
-                width: 100%;
-                max-width: 474px;
-            }
-            .footer-content {
-                justify-content: center;
-                text-align: center;
-            }
-            .pagination {
-                justify-content: center;
-            }
-            .playlists-grid {
-                flex-direction: column;
-                align-items: center;
-            }
-            .playlist-item {
-                width: 100%;
-                max-width: 474px;
-            }
-        }
-    </style>
-</head>
-<body>
-
-    <!-- Sticky Header -->
-    <header>
-        <nav>
-            <div class="logo">LOGO</div>
-            <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Commissions</a></li>
-                <li><a href="https://shop.michaelpichermusic.com/">Sample Libraries</a></li>
-                <li><a href="https://michaelpicher.bandcamp.com/">Download Music</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>Home</title>
+    <link rel="stylesheet" href="nicepage.css" media="screen">
+<link rel="stylesheet" href="index.css" media="screen">
+    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
+    <meta name="generator" content="Nicepage 7.14.0, nicepage.com">
+    <link rel="canonical" href="https://michaelpichermusic.com">
+    
+    
+    
+    
+    
+    
+    
+    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Roboto:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800">
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "Michael Picher Music",
+		"url": "https://michaelpichermusic.com",
+		"logo": "images/2023MichaelPicherLogoBlueFIN_WHITE.png",
+		"sameAs": [
+				"https://X.com/mike33776",
+				"http://www.youtube.com/channel/UClcBj6IhfPHfsT_TKTnHAHw",
+				"https://www.imdb.com/name/nm7472582/"
+		]
+}</script>
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="Home">
+    <meta property="og:description" content="">
+    <meta property="og:url" content="https://michaelpichermusic.com">
+    <meta property="og:type" content="website">
+  <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
+  <body data-home-page="Home.html" data-home-page-title="Home" data-path-to-root="./" data-include-products="false" class="u-black u-body u-clearfix u-xl-mode" data-lang="en"><header class="u-black u-clearfix u-header u-sticky u-sticky-7962 u-header" id="header"><div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
+        <nav class="u-menu u-menu-one-level u-offcanvas u-menu-1" role="navigation" aria-label="Menu navigation">
+          <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px; font-weight: 700; text-transform: uppercase;">
+            <a class="u-button-style u-custom-active-border-color u-custom-active-color u-custom-border u-custom-border-color u-custom-borders u-custom-hover-border-color u-custom-hover-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-decoration u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-hamburger-link u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#" tabindex="-1" aria-label="Open menu" aria-controls="bbe2">
+              <svg class="u-svg-link" viewBox="0 0 24 24"><use xlink:href="#menu-hamburger"></use></svg>
+              <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
+</g></svg>
+            </a>
+          </div>
+          <div class="u-custom-menu u-nav-container">
+            <ul role="menubar" class="u-nav u-spacing-30 u-unstyled u-nav-1"><li role="none" class="u-nav-item"><a role="menuitem" class="u-border-2 u-border-active-white u-border-hover-white u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-white u-text-hover-white u-text-white" href="./" style="padding: 10px 0px;">Home</a>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-border-2 u-border-active-white u-border-hover-white u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-white u-text-hover-white u-text-white" href="Commissions.html" style="padding: 10px 0px;">Commissions</a>
+</li><li role="none" class="u-nav-item"><a tabindex="-1" role="menuitem" class="u-border-2 u-border-active-white u-border-hover-white u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-white u-text-hover-white u-text-white" href="https://shop.michaelpichermusic.com/" style="padding: 10px 0px;">Sample Libraries</a>
+</li><li role="none" class="u-nav-item"><a tabindex="-1" role="menuitem" class="u-border-2 u-border-active-white u-border-hover-white u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-white u-text-hover-white u-text-white" href="https://michaelpicher.bandcamp.com/" style="padding: 10px 0px;">Download Music</a>
+</li><li role="none" class="u-nav-item"><a tabindex="-1" role="menuitem" class="u-border-2 u-border-active-white u-border-hover-white u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-white u-text-hover-white u-text-white" href="./#block-4" data-page-id="754603581" style="padding: 10px 0px;">Contact</a>
+</li></ul>
+          </div>
+          <div class="u-custom-menu u-nav-container-collapse" id="bbe2" role="region" aria-label="Menu panel">
+            <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+              <div class="u-inner-container-layout u-sidenav-overflow">
+                <div class="u-menu-close" tabindex="-1" aria-label="Close menu"></div>
+                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2" role="menubar"><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="./">Home</a>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="Commissions.html">Commissions</a>
+</li><li role="none" class="u-nav-item"><a tabindex="-1" role="menuitem" class="u-button-style u-nav-link" href="https://shop.michaelpichermusic.com/">Sample Libraries</a>
+</li><li role="none" class="u-nav-item"><a tabindex="-1" role="menuitem" class="u-button-style u-nav-link" href="https://michaelpicher.bandcamp.com/">Download Music</a>
+</li><li role="none" class="u-nav-item"><a tabindex="-1" role="menuitem" class="u-button-style u-nav-link" href="./#block-4" data-page-id="754603581">Contact</a>
+</li></ul>
+              </div>
+            </div>
+            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+          </div>
         </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <!-- Embedded YouTube Video -->
-        <div class="hero-video">
-            <iframe src="https://www.youtube.com/embed/SmAbOdxzxjA" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen></iframe>
+        <a href="" class="u-image u-logo u-image-1" data-image-width="544" data-image-height="160">
+          <img src="images/2023MichaelPicherLogoBlueFIN_WHITE.png" class="u-logo-image u-logo-image-1">
+        </a>
+      </div></header>
+    <section class="u-black u-clearfix u-section-1" id="block-5">
+      <div class="u-clearfix u-sheet u-valign-bottom-lg u-valign-bottom-md u-valign-bottom-sm u-valign-bottom-xs u-valign-middle-xl u-sheet-1">
+        <div class="u-preserve-proportions u-video u-video-contain u-video-1">
+          <div class="embed-responsive embed-responsive-1">
+            <iframe style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;" class="embed-responsive-item" data-src="https://www.youtube.com/embed/SmAbOdxzxjA?mute=0&amp;showinfo=0&amp;controls=1&amp;start=0" data-poster="images/Showreel2024thumb2.png" frameborder="0" allowfullscreen=""></iframe>
+            <button class="u-video-poster u-video-poster-1" data-src="images/Showreel2024thumb2.png"></button>
+          </div>
         </div>
-        
-        <div class="bio">
-            <p>     Michael Picher is a versatile composer with years of experience writing underscores/background music for media, standalone/concert works, and songs, whether it be for a wacky cartoon or a dark fantasy. His music has been heard in award-winning short films and popular animated series, including "Pencilmation", as well as "Terrestrially Challenged", which was nominated for "Best Original Music" in the 2024 Smodcastle Film Festival.</p>
-            
-            <p>     As a trumpet player, Michael has earned multiple awards and honors for both classical and jazz performance, over the course of almost 20 years of playing the instrument. Michael also works with virtual instruments, using his playing experience in the real world to craft orchestral MIDI mockups that are grounded in reality and mimic a performance by live musicians. This is done using a mix of high quality virtual instrument sample libraries from industry leading developers, as well as some libraries that Michael has created himself, giving his music a unique voice. Michael’s custom sample libraries include faithful digital recreations of traditional instruments such as pianos, synths and organs, trumpet and trombone effects, and percussion, but also children’s toys, wrenches, and even baking pans!</p>
-            
-            <p>     In addition to music, Michael has secondary passions for video production and art/animation. Over the years, he has worked on multiple projects as an editor, videographer, and artist/graphic designer.</p>
-        </div>
-
-        <!-- Underscores Section -->
-        <div class="underscores">
-            <h1 class="title">Underscores</h1>
-            
-            <div class="content-wrapper">
-                <div class="video-column">
-                    <iframe class="youtube-embed" src="https://www.youtube.com/embed/_2sQ-rtX6ek" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen></iframe>
-                    
-                    <iframe class="youtube-embed" src="https://www.youtube.com/embed/sDDkRsxGgXk" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen></iframe>
-                </div>
-                
-                <div class="soundcloud-wrapper">
-                    <iframe width="100%" height="564" scrolling="no" frameborder="no" allow="autoplay" 
-                            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%253Aplaylists%253A1416446635&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true"></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- New Section: Orchestral & Electronic Playlists Side-by-Side -->
-        <div class="playlists-section">
-            <div class="playlists-grid">
-                <!-- Orchestral & Small Ensemble -->
-                <div class="playlist-item">
-                    <h2 class="playlist-title">Orchestral & Small Ensemble</h2>
-                    <div class="playlist-wrapper">
-                        <iframe width="100%" height="565" scrolling="no" frameborder="no" allow="autoplay" 
-                                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%253Aplaylists%253A1295257648&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true"></iframe>
-                        <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
-                            <a href="https://soundcloud.com/michaelpicher" title="Michael Picher" target="_blank" style="color: #cccccc; text-decoration: none;">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Electronic & Experimental -->
-                <div class="playlist-item">
-                    <h2 class="playlist-title">Electronic & Experimental</h2>
-                    <div class="playlist-wrapper">
-                        <iframe width="100%" height="565" scrolling="no" frameborder="no" allow="autoplay" 
-                                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%253Aplaylists%253A1295258809&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true"></iframe>
-                        <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
-                            <a href="https://soundcloud.com/michaelpicher" title="Michael Picher" target="_blank" style="color: #cccccc; text-decoration: none;">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+      </div>
     </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-left">
-                <p>©2016-2025 Michael Picher</p>
-                <div class="footer-links">
-                    <a href="#">Privacy Policy</a>
-                </div>
-            </div>
-            <div class="pagination">
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot active"></div>
-            </div>
+    <section class="u-clearfix u-grey-80 u-section-2" id="block-1">
+      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <div class="custom-expanded u-container-style u-group u-shape-rectangle u-group-1">
+          <div class="u-container-layout u-container-layout-1">
+            <p class="u-text u-text-default u-text-1">&nbsp; &nbsp; &nbsp;Michael Picher is a versatile composer with years of experience writing underscores/background music for media, standalone/concert works, and songs, whether it be for a wacky cartoon or a dark fantasy. His music has been heard in award-winning short films and popular animated series, including "Pencilmation", as well as "Terrestrially Challenged", which was nominated for "Best Original Music" in the 2024 Smodcastle Film Festival.<br>
+              <br>&nbsp; &nbsp; &nbsp;As a trumpet player, Michael has earned multiple awards and honors for both classical and jazz performance, over the course of almost 20 years of playing the instrument. Michael also works with virtual instruments, using his playing experience in the real world to craft orchestral MIDI mockups that are grounded in reality and mimic a performance by live musicians. This is done using a mix of high quality virtual instrument sample libraries from industry leading developers, as well as some libraries that Michael has created himself, giving his music a unique voice. Michael’s custom sample libraries include faithful digital recreations of traditional instruments such as pianos, synths and organs, trumpet and trombone effects, and percussion, but also children’s toys, wrenches, and even baking pans!<br>
+              <br>&nbsp; &nbsp; &nbsp;In addition to music, Michael has secondary passions for video production and art/animation. Over the years, he has worked on multiple projects as an editor, videographer, and artist/graphic designer.
+            </p>
+          </div>
         </div>
-    </footer>
-
-</body>
-</html>
+      </div>
+    </section>
+    <section class="u-clearfix u-grey-90 u-section-3" id="block-2">
+      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <h3 class="u-align-center u-custom-font u-text u-text-body-alt-color u-text-default u-text-font u-text-1">Underscores</h3>
+        <div class="u-preserve-proportions u-video u-video-contain u-video-1">
+          <div class="embed-responsive embed-responsive-1">
+            <iframe style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;" class="embed-responsive-item" src="https://www.youtube.com/embed/_2sQ-rtX6ek?mute=0&amp;showinfo=0&amp;controls=0&amp;start=0" frameborder="0" allowfullscreen=""></iframe>
+          </div>
+        </div>
+        <div class="u-preserve-proportions u-video u-video-contain u-video-2">
+          <div class="embed-responsive embed-responsive-2">
+            <iframe style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;" class="embed-responsive-item" src="https://www.youtube.com/embed/sDDkRsxGgXk?mute=0&amp;showinfo=0&amp;controls=0&amp;start=0" frameborder="0" allowfullscreen=""></iframe>
+          </div>
+        </div>
+        <div class="u-clearfix u-custom-html u-custom-html-1">
+          <iframe width="100%" height="564" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%253Aplaylists%253A1416446635&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true"></iframe>
+          <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+            <a href="https://soundcloud.com/michaelpicher" target="_blank" style="color: #cccccc; text-decoration: none;">Michael Picher</a> · <a href="https://soundcloud.com/michaelpicher/sets/underscores" target="_blank" style="color: #cccccc; text-decoration: none;">Underscores</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="u-clearfix u-grey-90 u-section-4" id="block-3">
+      <div class="u-clearfix u-sheet u-valign-middle-xl u-valign-top-lg u-valign-top-md u-valign-top-sm u-valign-top-xs u-sheet-1">
+        <h3 class="u-align-center u-custom-font u-text u-text-body-alt-color u-text-default u-text-font u-text-1">Electronic &amp; Experimental</h3>
+        <h3 class="u-align-center u-custom-font u-text u-text-body-alt-color u-text-default u-text-font u-text-2">Orchestral &amp; Small Ensemble</h3>
+        <div class="u-clearfix u-custom-html u-custom-html-1">
+          <iframe width="100%" height="565" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%253Aplaylists%253A1295257648&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true"></iframe>
+          <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+            <a href="https://soundcloud.com/michaelpicher" title="Michael Picher" target="_blank" style="color: #cccccc; text-decoration: none;">Michael Picher</a> · <a href="https://soundcloud.com/michaelpicher/sets/orchestral" title="Orchestral &amp; Small Ensemble" target="_blank" style="color: #cccccc; text-decoration: none;">Orchestral &amp; Small Ensemble</a>
+          </div>
+        </div>
+        <div class="u-clearfix u-custom-html u-custom-html-2">
+          <iframe width="100%" height="565" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%253Aplaylists%253A1295258809&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true"></iframe>
+          <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+            <a href="https://soundcloud.com/michaelpicher" title="Michael Picher" target="_blank" style="color: #cccccc; text-decoration: none;">Michael Picher</a> · <a href="https://soundcloud.com/michaelpicher/sets/electronic-experimental" title="Electronic &amp; Experimental" target="_blank" style="color: #cccccc; text-decoration: none;">Electronic &amp; Experimental</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="u-clearfix u-grey-80 u-section-5" id="block-4">
+      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1"></div>
+    </section>
+    
+    
+    
+    <footer class="u-align-center u-black u-clearfix u-container-align-center u-footer u-footer" id="footer"><div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
+        <div class="u-social-icons u-social-icons-1">
+          <a class="u-social-url" target="_blank" data-type="Custom" title="X" href="https://X.com/mike33776"><span class="u-file-icon u-icon u-social-custom u-social-icon u-icon-1"><img src="images/TwitterXIcon60pxALT.png" alt=""></span>
+          </a>
+          <a class="u-social-url" target="_blank" data-type="Custom" title="YouTube" href="http://www.youtube.com/channel/UClcBj6IhfPHfsT_TKTnHAHw"><span class="u-file-icon u-icon u-social-custom u-social-icon u-icon-2"><img src="images/7990b1_5a26abdd28594e959d82e292c82fc5e4mv2.png" alt=""></span>
+          </a>
+          <a class="u-social-url" target="_blank" data-type="Custom" title="IMDb" href="https://www.imdb.com/name/nm7472582/"><span class="u-file-icon u-icon u-social-custom u-social-icon u-icon-3"><img src="images/7990b1_826538f1919b4a998eca290af17f07bbmv2.png" alt=""></span>
+          </a>
+        </div>
+        <p class="u-align-left u-small-text u-text u-text-variant u-text-1"> ©2016-2025 Michael Picher<br>
+          <a href="Privacy-Policy.html" data-page-id="44421900" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1" title="Page 1">Privacy Policy</a>
+        </p>
+      </div></footer>
+    <section class="u-backlink u-clearfix u-grey-80"> This <a href="https://nicepage.com/html-templates">HTML Template</a> was created with Nicepage Builder 
+    </section>
+  
+</body></html>
