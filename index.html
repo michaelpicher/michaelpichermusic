@@ -19,6 +19,7 @@
     if (!form) return;
 
     const successMsg = form.querySelector('.u-form-send-success');
+    const errorMsg = form.querySelector('.u-form-send-error');
 
     form.addEventListener('submit', function (e) {
       e.preventDefault(); // Stop Nicepage default behavior
