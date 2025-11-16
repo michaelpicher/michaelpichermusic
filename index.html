@@ -12,7 +12,17 @@
     <meta name="generator" content="Nicepage 7.14.0, nicepage.com">
     <link rel="canonical" href="https://michaelpichermusic.com">
     
-    
+<script>
+  // Optional: Show success message without redirect
+  document.addEventListener('DOMContentLoaded', function () {
+    const form = document.querySelector('form[data-netlify="true"]');
+    if (form) {
+      form.addEventListener('submit', function () {
+        // Optional: show loading state
+      });
+    }
+  });
+</script>
     
     
     
@@ -134,7 +144,7 @@
     <section class="u-clearfix u-grey-80 u-section-5" id="contact">
       <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
         <div class="custom-expanded u-clearfix u-custom-html u-custom-html-1">
-          <form name="Contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/thank-you" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" style="padding: 10px;"><!-- Netlify honeypot field (hidden) -->
+          <form name="Contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" style="padding: 10px;"><!-- Netlify honeypot field (hidden) -->
             <p class="hidden hidden-1">
               <label>Don’t fill this out if you’re human: <input name="bot-field">
               </label>
