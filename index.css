@@ -323,10 +323,6 @@
   margin: 20px auto 0;
 }
 
-.u-section-5 .hidden-1 {
-  display: none;
-}
-
 @media (max-width: 1199px) {
   .u-section-5 .u-custom-html-1 {
     width: 940px;
