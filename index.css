@@ -319,7 +319,7 @@
   height: auto;
   min-height: 392px;
   width: 1020px;
-  margin: 10px auto;
+  margin: 16px auto 4px;
 }
 
 @media (max-width: 1199px) {
