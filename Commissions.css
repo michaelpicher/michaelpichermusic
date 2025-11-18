@@ -93,14 +93,17 @@
   }
 
   .u-section-2 .u-image-1 {
-    width: 340px;
     height: 439px;
-    margin-left: 0;
+    margin-top: 32px;
+    margin-right: initial;
+    margin-left: initial;
+    width: auto;
   }
 
   .u-section-2 .u-video-1 {
     width: 340px;
     height: 191px;
+    margin-top: 29px;
     margin-bottom: 29px;
   }
 }
