@@ -10,16 +10,16 @@
 }
 
 .u-section-1 .u-text-2 {
-  margin: 30px 60px 0;
+  margin: 30px 97px 0;
 }
 
 .u-section-1 .u-text-3 {
   font-weight: 700;
-  margin: 60px 0 0 60px;
+  margin: 60px 97px 0;
 }
 
 .u-section-1 .u-text-4 {
-  margin: 24px 60px 30px;
+  margin: 24px 97px 30px;
 }
 
 @media (max-width: 1199px) {
@@ -29,6 +29,7 @@
   }
 
   .u-section-1 .u-text-3 {
+    margin-right: 0;
     margin-left: 0;
   }
 
@@ -55,19 +56,19 @@
     font-size: 1.5rem;
   }
 }.u-section-2 .u-sheet-1 {
-  min-height: 542px;
+  min-height: 543px;
 }
 
 .u-section-2 .u-image-1 {
-  width: 357px;
+  width: 323px;
   height: 461px;
-  margin: 41px auto 0 60px;
+  margin: 41px auto 0 113px;
 }
 
 .u-section-2 .u-video-1 {
-  width: 633px;
-  height: 355px;
-  margin: -408px 60px 94px auto;
+  width: 561px;
+  height: 314px;
+  margin: -387px 113px 60px auto;
 }
 
 .u-section-2 .embed-responsive-1 {
@@ -76,31 +77,19 @@
 
 @media (max-width: 1199px) {
   .u-section-2 .u-sheet-1 {
-    min-height: 917px;
+    min-height: 825px;
   }
 
   .u-section-2 .u-image-1 {
+    height: 421px;
+    margin-top: 30px;
     margin-left: auto;
   }
 
   .u-section-2 .u-video-1 {
     margin-top: 30px;
-    margin-right: auto;
-    margin-bottom: 6px;
-  }
-}
-
-@media (max-width: 991px) {
-  .u-section-2 .u-sheet-1 {
-    min-height: 905px;
-  }
-
-  .u-section-2 .u-image-1 {
-    margin-top: 30px;
-  }
-
-  .u-section-2 .u-video-1 {
     margin-bottom: 30px;
+    margin-right: auto;
   }
 }
 
@@ -111,29 +100,30 @@
 
   .u-section-2 .u-video-1 {
     width: 540px;
-    height: 303px;
+    height: 302px;
     margin-top: 20px;
-    margin-bottom: 94px;
+    margin-bottom: 60px;
   }
 }
 
 @media (max-width: 575px) {
   .u-section-2 .u-sheet-1 {
-    min-height: 720px;
+    min-height: 701px;
   }
 
   .u-section-2 .u-image-1 {
-    height: 439px;
-    margin-top: 32px;
+    margin-top: 31px;
     margin-right: initial;
     margin-left: initial;
     width: auto;
   }
 
   .u-section-2 .u-video-1 {
-    width: 340px;
-    height: 191px;
-    margin-top: 29px;
-    margin-bottom: 29px;
+    height: 190px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-right: initial;
+    margin-left: initial;
+    width: auto;
   }
 }
