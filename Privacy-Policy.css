@@ -75,7 +75,7 @@
 @media (max-width: 575px) {
   .u-section-1 .u-text-1 {
     font-size: 1.5rem;
-    margin-left: 0;
-    margin-right: 0;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
