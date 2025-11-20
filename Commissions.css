@@ -65,13 +65,6 @@
 @media (max-width: 1199px) {
   .u-section-2 .u-video-1 {
     margin-top: 20px;
-    margin-bottom: initial;
-  }
-}
-
-@media (max-width: 991px) {
-  .u-section-2 .u-video-1 {
-    margin-bottom: 94px;
   }
 }
 
