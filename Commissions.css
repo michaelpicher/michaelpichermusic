@@ -76,16 +76,17 @@
 
 @media (max-width: 1199px) {
   .u-section-2 .u-sheet-1 {
-    min-height: 971px;
+    min-height: 917px;
   }
 
   .u-section-2 .u-image-1 {
-    margin-left: 0;
+    margin-left: auto;
   }
 
   .u-section-2 .u-video-1 {
-    margin-right: 0;
-    margin-bottom: 60px;
+    margin-top: 30px;
+    margin-right: auto;
+    margin-bottom: 6px;
   }
 }
 
@@ -96,13 +97,10 @@
 
   .u-section-2 .u-image-1 {
     margin-top: 30px;
-    margin-left: auto;
   }
 
   .u-section-2 .u-video-1 {
-    margin-top: 30px;
     margin-bottom: 30px;
-    margin-right: auto;
   }
 }
 
