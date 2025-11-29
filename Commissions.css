@@ -95,14 +95,13 @@
 
 @media (max-width: 767px) {
   .u-section-2 .u-sheet-1 {
-    min-height: 509px;
+    min-height: 802px;
   }
 
   .u-section-2 .u-video-1 {
     width: 540px;
     height: 302px;
     margin-top: 20px;
-    margin-bottom: 60px;
   }
 }
 
@@ -121,7 +120,6 @@
   .u-section-2 .u-video-1 {
     height: 190px;
     margin-top: 30px;
-    margin-bottom: 30px;
     margin-right: initial;
     margin-left: initial;
     width: auto;
