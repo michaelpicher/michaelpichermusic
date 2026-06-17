@@ -146,11 +146,15 @@
           <form name="Contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/thank-you" style="max-width: 600px; margin: 0 auto; padding: 20px; font-family: Arial, sans-serif; text-align: left;"><!-- Hidden fields -->
             <div style="display: none;">
               <input name="bot-field">
-            </div>
-            <input type="hidden" name="form-name" value="Contact"><!-- Email Field -->
+            </div><!-- Email Field -->
+            <input type="hidden" name="form-name" value="Contact">
             <div style="margin-bottom: 16px;">
               <label for="email" style="display: block; margin-bottom: 8px; font-weight: bold; color: white;">Email</label>
               <input type="email" id="email" name="email" placeholder="Enter a valid email address" required="" style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; font-size: 16px; color: #333 !important; background: #fff;">
+            </div><!-- Subject Field -->
+              <div style="margin-bottom: 16px;">
+              <label for="subject" style="display: block; margin-bottom: 8px; font-weight: bold; color: white;">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="Enter subject" style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; font-size: 16px; color: #333 !important; background: #fff;">
             </div><!-- Message Field -->
             <div style="margin-bottom: 16px;">
               <label for="message" style="display: block; margin-bottom: 8px; font-weight: bold; color: white;">Message</label>
